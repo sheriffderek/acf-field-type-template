@@ -5,12 +5,12 @@ if( ! defined( 'ABSPATH' ) ) exit;
 
 
 // check if class already exists
-if( !class_exists('NAMESPACE_acf_field_FIELD_NAME') ) :
+if( !class_exists('sheriff_acf_field_perpetualcode') ) :
 
 
-class NAMESPACE_acf_field_FIELD_NAME extends acf_field {
-	
-	
+class sheriff_acf_field_perpetualcode extends acf_field {
+
+
 	/*
 	*  __construct
 	*
@@ -30,14 +30,14 @@ class NAMESPACE_acf_field_FIELD_NAME extends acf_field {
 		*  name (string) Single word, no spaces. Underscores allowed
 		*/
 		
-		$this->name = 'FIELD_NAME';
+		$this->name = 'perpetualcode';
 		
 		
 		/*
 		*  label (string) Multiple words, can include spaces, visible when selecting a field type
 		*/
 		
-		$this->label = __('FIELD_LABEL', 'TEXTDOMAIN');
+		$this->label = __('Perpetual Code field', 'acf-perpetualcode');
 		
 		
 		/*
@@ -58,11 +58,11 @@ class NAMESPACE_acf_field_FIELD_NAME extends acf_field {
 		
 		/*
 		*  l10n (array) Array of strings that are used in JavaScript. This allows JS strings to be translated in PHP and loaded via:
-		*  var message = acf._e('FIELD_NAME', 'error');
+		*  var message = acf._e('perpetualcode', 'error');
 		*/
 		
 		$this->l10n = array(
-			'error'	=> __('Error! Please enter a higher value', 'TEXTDOMAIN'),
+			'error'	=> __('Error! Please enter a higher value', 'acf-perpetualcode'),
 		);
 		
 		
@@ -105,8 +105,8 @@ class NAMESPACE_acf_field_FIELD_NAME extends acf_field {
 		*/
 		
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Font Size','TEXTDOMAIN'),
-			'instructions'	=> __('Customise the input font size','TEXTDOMAIN'),
+			'label'			=> __('Font Size','acf-perpetualcode'),
+			'instructions'	=> __('Customise the input font size','acf-perpetualcode'),
 			'type'			=> 'number',
 			'name'			=> 'font_size',
 			'prepend'		=> 'px',
@@ -178,13 +178,13 @@ class NAMESPACE_acf_field_FIELD_NAME extends acf_field {
 		
 		
 		// register & include JS
-		wp_register_script('TEXTDOMAIN', "{$url}assets/js/input.js", array('acf-input'), $version);
-		wp_enqueue_script('TEXTDOMAIN');
+		wp_register_script('acf-perpetualcode', "{$url}assets/js/input.js", array('acf-input'), $version);
+		wp_enqueue_script('acf-perpetualcode');
 		
 		
 		// register & include CSS
-		wp_register_style('TEXTDOMAIN', "{$url}assets/css/input.css", array('acf-input'), $version);
-		wp_enqueue_style('TEXTDOMAIN');
+		wp_register_style('acf-perpetualcode', "{$url}assets/css/input.css", array('acf-input'), $version);
+		wp_enqueue_style('acf-perpetualcode');
 		
 	}
 	
@@ -443,7 +443,7 @@ class NAMESPACE_acf_field_FIELD_NAME extends acf_field {
 		// Advanced usage
 		if( $value < $field['custom_minimum_setting'] )
 		{
-			$valid = __('The value is too little!','TEXTDOMAIN'),
+			$valid = __('The value is too little!','acf-perpetualcode'),
 		}
 		
 		
@@ -557,7 +557,7 @@ class NAMESPACE_acf_field_FIELD_NAME extends acf_field {
 
 
 // initialize
-new NAMESPACE_acf_field_FIELD_NAME( $this->settings );
+new sheriff_acf_field_perpetualcode( $this->settings );
 
 
 // class_exists check

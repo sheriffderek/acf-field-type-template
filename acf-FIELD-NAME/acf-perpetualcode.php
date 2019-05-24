@@ -16,9 +16,9 @@ if( ! defined( 'ABSPATH' ) ) exit;
 
 
 // check if class already exists
-if( !class_exists('NAMESPACE_acf_plugin_FIELD_NAME') ) :
+if( !class_exists('sheriff_acf_plugin_perpetualcode') ) :
 
-class NAMESPACE_acf_plugin_FIELD_NAME {
+class sheriff_acf_plugin_perpetualcode {
 	
 	// vars
 	var $settings;
@@ -74,18 +74,18 @@ class NAMESPACE_acf_plugin_FIELD_NAME {
 		
 		
 		// load textdomain
-		load_plugin_textdomain( 'TEXTDOMAIN', false, plugin_basename( dirname( __FILE__ ) ) . '/lang' ); 
+		load_plugin_textdomain( 'acf-perpetualcode', false, plugin_basename( dirname( __FILE__ ) ) . '/lang' ); 
 		
 		
 		// include
-		include_once('fields/class-NAMESPACE-acf-field-FIELD-NAME-v' . $version . '.php');
+		include_once('fields/class-sheriff-acf-field-perpetualcode-v' . $version . '.php');
 	}
 	
 }
 
 
 // initialize
-new NAMESPACE_acf_plugin_FIELD_NAME();
+new sheriff_acf_plugin_perpetualcode();
 
 
 // class_exists check
